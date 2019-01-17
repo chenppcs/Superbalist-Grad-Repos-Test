@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+#if [[ "${OSTYPE}" == "linux-gnu" ]]; then
+#	sudo apt install jq
+#elif [[ "${OSTYPE}" == "darwin" ]]; then
+#	brew install jq
+#fi
+
+
+function get-listing() {
+	PLID="${1}"
+	curl -s "http://10.4.1.64:31877/rest/productlines/"${PLID}"/listing/api"
+}
+
+
+#for ((i=0; i<10; i++)); do
+#	sleep 0.5
+#	get-listing "${RANDOM}" | jq '.'
+#done

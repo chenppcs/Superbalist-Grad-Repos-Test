@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+cat movies.csv
+echo ""
+read -n 1 -p "Find all kids shows"
+echo "...."
+grep kids movies.csv 
+echo "" 
+read -n 1 -p "What if we only want the title?"
+echo "..."
+grep kids movies.csv | cut -d'*' -f1
+echo "" 
+read -n 1 -p "What if we only want the quote?"
+echo "..."
+grep kids movies.csv | cut -d'*' -f2
+echo ""
+read -n 1 -p "read a file, line by line"
+
+# Extra credit!
+# read from file, line by line
+while read some_line; do
+	echo "${some_line}"
+done <movies.csv

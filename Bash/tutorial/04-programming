@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+
+# variables
+x="hello world"  # good
+# y= 2 # bad
+echo "${x} or $x or even "$x" is can now be printed"
+
+
+
+read -n 1 -p "if statement!"
+echo "-----"
+if [[ -z "${y}"  ]]; then
+	echo "'y' does not exist"
+fi
+
+read -n 1 -p "else statement!"
+echo "-----"
+if [[ -z "${x}"  ]]; then
+	echo "'x' does not exist"
+else
+	echo "'x' we had just defined it!"
+fi
+
+# [[ vs [  ? both work, but [ has quirks. Wont go into it. Good rule of thumb, stick to the [[ ]] version
+
+read -n 1 -p "string equality"
+# equality
+if [[ "${x}" == "hello Grads" ]]; then
+	echo "Hey grads, say hello"
+elif [[ "${x}" == "hello world" ]]; then
+	echo "Hey world, how goes?"
+else
+	echo "Done here..."
+fi
+
+read -n 1 -p "number(integer) comparison"
+z=123
+p=10.3
+if [[ "${z}" -eq 123 ]]; then
+	echo "z comparison works!"
+fi
+if [[ "${p}" -eq 10.3 ]]; then  # fails!
+	echo "p comparison works"  
+fi
+if [[ "${p}" -lt 10 ]]; then  
+	echo "float comparison works"  # NO it doesnt.
+fi
+
+
+read -n 1 -p "now for loops"
+
+# Dir ops
+touch /tmp/greetings/{afrikaans,english,chinese,xhosa}
+tree /tmp/greetings/
+ 
+read -n 1 -p "iterate over files in our directory"
+# bash can iterate over files very simply
+for i in /tmp/greetings/*; do
+	echo "The file [$i] is in the dir";
+	echo "I do love for loops";
+done
+
+
+read -n 1 -p "you can even combine 'if' and 'for'"
+
+for i in /tmp/greetings/*; do
+	echo "$i.."
+	if [[ "${i}" == *"chinese" ]]; then
+		echo "Chinese file found!"
+	fi
+done
+
+read -n 1 -p "functions"
+function greeter() {
+	echo "Hello $1"
+}
+
+greeter "bob"
+
+for name in "sally" "joe" "andy"; do
+	greeter "${name}"
+done
+
+read -n 1 -p "importing from bash libraries"
+
+source fairwell.sh
+ciao "Dean"
+
+

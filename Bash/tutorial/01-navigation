@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+ls -a /   # all entries (even hidden)
+ls -al /  # list view
+ls -alt /  # newest first
+ls -altr / # newest last
+
+
+cd /    # root
+cd /tmp # tmp directory
+cd ~    # home directory (aka /home/stephan in my case)
+
+# Want a back button for bash?
+# Extra credit! the directory stack! 
+#
+cd /tmp
+pushd ~
+pushd /opt
+pushd /media
+dirs   # see all dirs in the stack
+popd   # back in /opt!
+popd   # back to ~
+popd   # back to /tmp

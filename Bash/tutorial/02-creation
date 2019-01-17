@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+set -x
+# rm -fr /tmp/greetings
+
+# Make a dir
+mkdir /tmp/greetings
+ls /tmp/
+
+# the same as...
+cd /tmp
+mkdir greetings
+
+# make a empty file
+touch /tmp/greetings/english
+
+# alternatively 
+# cd /tmp/greetings/
+# touch english
+
+# Files files files files
+#
+echo "Good day"  # default output is the "stdout" file.
+# you can also change the output to go into other files 
+echo "Good day" > /tmp/greetings/english
+echo "Howdy" > /tmp/greetings/english
+
+echo "---------------------------"
+cat /tmp/greetings/english
+
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+# .
+
+
+# Remember to use >> to append!!!
+
+echo "Hi there" >> /tmp/greetings/english
+echo "Yo, whatsup?" >> /tmp/greetings/english
+echo "---------------------------"
+cat /tmp/greetings/english
+
+# Extra Credit!
+#
+# If you don't want to keep typing echo here's a nice way to do it also:
+# HEREDOCS!
+# aka how to do multi line strings in bash
+cat <<EOF > /tmp/greetings/afrikaans
+Goeie dag!
+Hoe gaan dit?
+Lekker!
+EOF
+
+set +x

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+# Real h@xorz uses emacs. when it's installed.
+# @Takealot, however we use vim on servers a lot. But nano is simpler.
+# Both are installed, vim is harder, this is not a vim course.
+# so going with nano
+
+# Cut/Uncut
+# Where is/Replace
+# Write out
+
